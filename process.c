@@ -440,6 +440,9 @@ void cpu_idle(void)
 			if (cpu_is_offline(smp_processor_id()))
 				play_dead();
 
+			/* Insert Hello World in idle loop. */
+                        printk("Hello World\n");
+
 			/*
 			 * Idle routines should keep interrupts disabled
 			 * from here on, until they go to idle.
